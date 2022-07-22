@@ -76,7 +76,7 @@ for t in range(1,T+1): #1~T번 반복
 
         P_opH = []
         VasqH = []
-        vH = Count_Hseq.pop(0)
+        vH = Count_Hseq.pop(0) # 코멘트
         VasqH.append(vH)
 
         while (len(Count_Hseq)>0):
