@@ -27,9 +27,10 @@ for i in range(M):
 
 TEM = BFS(Graph,1,N)
 ANS = []
-ANS.append(TEM.index(max(TEM)))
-ANS.append(max(TEM)-1)
-ANS.append(TEM.count(max(TEM)))
+Max_tem = max(TEM)
+ANS.append(TEM.index(Max_tem))
+ANS.append(Max_tem-1)
+ANS.append(TEM.count(Max_tem))
 
 for i in ANS:
     print(i, end=' ')
