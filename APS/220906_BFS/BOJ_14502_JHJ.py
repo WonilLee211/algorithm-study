@@ -6,7 +6,6 @@ from itertools import combinations
 def BFS(Arr,Arr_check,N,M,Graph):
     di = (0, 1, -1, 0)
     dj = (1, 0, 0, -1)
-    Zero_list=[]
     visited = [[0] * M for _ in range(N)]
     Q = []
 
@@ -53,8 +52,6 @@ for i in range(N):
         if Arr[i][j] == 0:
             blank_list.append([i,j])
 
-n = len(blank_list)
-
 Combi = list(combinations(blank_list,3))
 Arr_check = [[0]*M for _ in range(N)]
 for i in range(N):
@@ -66,6 +63,7 @@ for i in range(len(Combi)):
     Saftzone = []
     for j in range(len(Combi[i])):
         Arr_check[Combi[i][j][0]][Combi[i][j][1]] = 1
+
     Saftzone.append(BFS(Arr,Arr_check,N,M,Graph))
     max_Safe.append(max(Saftzone))
 
