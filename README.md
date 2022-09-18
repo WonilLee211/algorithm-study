@@ -8,7 +8,7 @@
 <summary> <h2> 참여 인원 <h2> </summary>
 <div markdown="1">
 
- 이원일, 이아현, 임유정, 조홍준, 강보성
+ 이원일, 조홍준, 강보성, 김나연
 
 </div>
 </details>
