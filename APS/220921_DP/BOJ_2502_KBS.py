@@ -13,6 +13,7 @@ for i in range(3,D+1):
     deq.popleft()
     deq.append(temp1)
     deq.append(temp2)
+    print(deq)
 a, b = deq[2], deq[3]
 for A in range(1,K//a):
     if (K-(A*a))%b == 0:
