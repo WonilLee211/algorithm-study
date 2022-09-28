@@ -12,8 +12,8 @@ d[2] = (0,1)
 for i in range(3,D+1):
     d[i] = (d[i-2][0] + d[i-1][0], d[i-2][1] + d[i-1][1])
 
-a = d[D][0]
-b = d[D][1]
+a = d[D][0]     # 첫쨋날 떡의 계수
+b = d[D][1]     # 둘쨋날 떡의 계수
 
 n, m = 1, 1
 
@@ -22,7 +22,7 @@ while True:
         print(n)
         print(m)
         break
-    elif a*n + b*m < K:
+    elif a*n + b*m < K:     # 첫날 수 <= 둘쨋날 수 이기때문에 모든 경우의 수를 찾기위해 !
         m += 1
     elif a*n + b*m > K:
         n += 1
