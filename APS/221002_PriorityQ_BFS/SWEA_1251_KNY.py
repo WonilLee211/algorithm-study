@@ -43,16 +43,16 @@ for tc in range(1,1+T):
     island = []
     for i in range(N):
         x,y = xs[i], ys[i]
-        island.append((i,x,y))
+        island.append((i,x,y))  # 노드번호, 노드x좌표, 노드y좌표
 
-    island_comb = list(combinations(island,2))
+    island_comb = list(combinations(island,2))  # 연결될 수 있는 섬 조합 구하기
 
     for comb in island_comb:
-        a, b = comb[0][0], comb[1][0]
+        a, b = comb[0][0], comb[1][0]   # 노드 번호
 
         L = ((comb[0][1]-comb[1][1])**2+(comb[0][2]-comb[1][2])**2) # 환경부담금 => 환경 부담 세율(E)과 각 해저터널 길이(L)의 제곱의 곱(E * L^2)만큼 지불
         w = L * E
-        edges.append((w,a,b))   # 환경부담금을 비용으로 하여 정렬
+        edges.append((w,a,b))   # 환경부담금을 비용으로 하여 정렬 # 환경부담금, 노드1, 노드2
 
     edges.sort()
 
