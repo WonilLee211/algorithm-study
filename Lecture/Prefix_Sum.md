@@ -9,13 +9,13 @@
 - arr을 순차 탐색하면서 sum 배열 만들기
 - sum[i]에는 arr[0] + arr[1] + arr[2] + ... + arr[i-1]
 
-<img src="./prefix_img/1dim_01.png">
+![Alt text](../img/prefix_sum_01.png)
 
 ## 2차원 배열
 
 - sum[i][j]에는 arr[0][0]부터 arr[i-1][j-1]까지의 합이 담김
 
-<img src="./prefix_img/2dim_01.png">
+![Alt text](../img/prefix_sum_02.png)
 
 ### **sum_arr[i][j] = arr[i-1][j-1] + sum_arr[i-1][j] + sum_arr[i][j-1] - sum_arr[i-1][j-1]**
 
@@ -46,7 +46,7 @@ S = sum_arr[x2+1][y2+1] - sum_arr[x1][y2+1] - sum_arr[x2+1][y1] + sum_arr[x1][y1
 print(S)
 ```
 
-<img src="./prefix_img/2dim_02.png">
+![Alt text](../img/prefix_sum_03.png)
 
 - (x2, y2)까지의 누적합에서 제외되는 부분의 누적합을 빼는데 교차되는 부분을 두번 빼게 되므로 한번 더해줌
 - (x2, y2)까지의 누적합 -> sum_arr[x2+1][y2+1] (=42)
