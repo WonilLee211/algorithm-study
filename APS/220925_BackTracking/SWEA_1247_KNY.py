@@ -1,4 +1,5 @@
 # 최적 경로
+# 회사에서 출발해서 이들을 모두 방문하고 집에 돌아가는 경로 중 총 이동거리가 가장 짧은 경로
 
 import sys
 sys.stdin = open('input.txt')
@@ -6,24 +7,24 @@ sys.stdin = open('input.txt')
 def f(i,k,dis):
     global min_dis
 
-    if dis >= min_dis:
+    if dis >= min_dis:  # 최소 거리 넘으면 return 백트래킹
         return
 
     if i == k:
-        dis += abs(p[-1][0]-home[0])+abs(p[-1][1]-home[1])
+        dis += abs(p[-1][0]-home[0])+abs(p[-1][1]-home[1])  # 마지막 지점에선 집으로 오는 거리를 dis에 더해줌
         if dis < min_dis:
             min_dis = dis
 
     else:
-        for j in range(k):
-            if used[j] == 0:    # a[j]가 아직 사용되지 않았으면
-                used[j] = 1     # a[j] 사용됨으로  표시
-                p[i] = a[j]     # p[i]는 a[j]로 결정
-                if i == 0:
-                    f(i + 1, k, dis+abs(company[0]-a[j][0])+abs(company[1]-a[j][1]))  # p[i+1] 값을 결정하러 이동
-                else:
+        for j in range(k):  # 경로를 순열로 생성
+            if used[j] == 0:
+                used[j] = 1
+                p[i] = a[j]
+                if i == 0:  # 시작점에선 회사에서 출발하는 거리를 dis에 더해줌
+                    f(i + 1, k, dis+abs(company[0]-a[j][0])+abs(company[1]-a[j][1]))
+                else:   # 시작점 이후엔 집을 거치며 거리 추가
 
-                    f(i+1, k, dis+abs(p[i-1][0]-a[j][0])+abs(p[i-1][1]-a[j][1]))       # p[i+1] 값을 결정하러 이동
+                    f(i+1, k, dis+abs(p[i-1][0]-a[j][0])+abs(p[i-1][1]-a[j][1]))
                 used[j] = 0     # a[j]를 다른 자리에서 쓸 수 있도록 해제
 
 
