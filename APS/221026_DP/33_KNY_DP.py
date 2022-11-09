@@ -7,8 +7,8 @@ sys.stdin = open('input.txt')
 input = sys.stdin.readline
 
 N = int(input())
-T = []
-P = []
+T = []  # 소요시간
+P = []  # 수익
 
 for _ in range(N):
     t,p = map(int,input().split())
